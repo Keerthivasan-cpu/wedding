@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-serif: var(--font-cormorant), Georgia, serif;
+    --font-tamil-text: var(--font-tamil), sans-serif;
+    --font-body: var(--font-jakarta), sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, .font-serif-heading {
+    font-family: var(--font-serif);
+  }
+
+  .font-tamil {
+    font-family: var(--font-tamil-text);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Gold Gradients & Glows */
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+}
+
+.bg-gold-radial {
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0.05) 50%, transparent 70%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFE89C 0%, #E5C158 35%, #D4AF37 70%, #997A15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-shimmer {
+  background: linear-gradient(90deg, #D4AF37 0%, #FFF3B0 25%, #D4AF37 50%, #FFF3B0 75%, #D4AF37 100%);
+  background-size: 200% auto;
+  color: #000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.border-gold-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+.shadow-gold-lg {
+  box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.3), 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.shadow-temple-card {
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.12);
+}
+
+/* Mandala Pattern Backgrounds */
+.bg-mandala-pattern {
+  background-image: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-kolam-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='0.6' stroke-opacity='0.12'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z'/%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40 Z'/%3E%3Ccircle cx='40' cy='40' r='15'/%3E%3Ccircle cx='40' cy='40' r='5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Glassmorphism Temple Plaque */
+.glass-temple-card {
+  background: rgba(18, 58, 52, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.glass-maroon-card {
+  background: rgba(59, 15, 26, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #250B12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8C6A1D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
 }
