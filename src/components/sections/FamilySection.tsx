@@ -125,9 +125,11 @@ export default function FamilySection() {
             </motion.p>
 
             {/* Groom Details Line */}
-            <div className="mt-6 pt-4 border-t border-[#D4AF37]/20 w-full">
+            <div className="mt-6 pt-4 border-t border-[#D4AF37]/20 w-full text-center">
               <span className="font-serif text-xs text-amber-300/80 tracking-wider">
-                Groom: <strong className="text-amber-100 font-semibold">Ranjith Raj B., B.E.</strong> (UX Designer II)
+                Groom:{" "}
+                <span className="text-[15px] sm:text-base text-amber-100 font-bold">Ranjith Raj</span>{" "}
+                <strong className="text-amber-100 font-semibold">B., B.E.</strong> (UX Designer II)
               </span>
             </div>
           </motion.div>
@@ -195,9 +197,11 @@ export default function FamilySection() {
             </motion.p>
 
             {/* Bride Details Line */}
-            <div className="mt-6 pt-4 border-t border-[#D4AF37]/20 w-full">
+            <div className="mt-6 pt-4 border-t border-[#D4AF37]/20 w-full text-center">
               <span className="font-serif text-xs text-amber-300/80 tracking-wider">
-                Bride: <strong className="text-amber-100 font-semibold">Vijayalakshmi E., B.Com., MBA.</strong> (Business Analyst)
+                Bride:{" "}
+                <span className="text-[15px] sm:text-base text-amber-100 font-bold">Vijayalakshmi</span>{" "}
+                <strong className="text-amber-100 font-semibold">E., B.Com., MBA.</strong> (Business Analyst)
               </span>
             </div>
           </motion.div>
