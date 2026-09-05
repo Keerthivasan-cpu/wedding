@@ -14,7 +14,7 @@ interface CeremonyEvent {
   time: string;
   venue: string;
   address: string;
-  mapsUrl: string;
+  mapsUrl?: string;
   isMain?: boolean;
 }
 
@@ -29,7 +29,6 @@ const EVENTS: CeremonyEvent[] = [
     time: "4:30 PM – 6:00 PM",
     venue: "Ramalaya Kalyana Mandapam",
     address: "KNV Nagar, Koladi Road, Thiruverkadu, Chennai – 600 077",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Ramalaya+Kalyana+Mandapam+Koladi+Road+Thiruverkadu+Chennai",
   },
   {
     id: "azhaippu",
@@ -297,7 +296,7 @@ export default function TimelineSection() {
                         {/* 4, 5, 6. Date, Time, Venue Details Box */}
                         <motion.div
                           variants={cardItemVariants}
-                          className="space-y-2.5 text-xs sm:text-sm text-[#f0e6dd] py-3.5 px-4 rounded-xl bg-[#240d12]/70 border border-[#d4af7a]/15 mb-6 font-sans"
+                          className={`space-y-2.5 text-xs sm:text-sm text-[#f0e6dd] py-3.5 px-4 rounded-xl bg-[#240d12]/70 border border-[#d4af7a]/15 ${evt.mapsUrl ? "mb-6" : "mb-0"} font-sans`}
                         >
                           {/* 4. Date */}
                           <div className={`flex items-center gap-2.5 ${isEven ? "md:justify-end" : "justify-start"}`}>
@@ -322,20 +321,22 @@ export default function TimelineSection() {
                         </motion.div>
 
                         {/* 7. Google Map Location Button Microinteraction */}
-                        <motion.div
-                          variants={cardItemVariants}
-                          className={`flex ${isEven ? "md:justify-end" : "justify-start"}`}
-                        >
-                          <a
-                            href={evt.mapsUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#d4af7a] bg-[#d4af7a]/10 hover:bg-[#d4af7a] hover:text-[#1f0d10] text-[#f0e6dd] font-sans text-xs font-semibold tracking-wide transition-all duration-300 group/btn cursor-pointer shadow-sm"
+                        {evt.mapsUrl && (
+                          <motion.div
+                            variants={cardItemVariants}
+                            className={`flex ${isEven ? "md:justify-end" : "justify-start"}`}
                           >
-                            <span>Google Map Location</span>
-                            <ExternalLink className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-250" />
-                          </a>
-                        </motion.div>
+                            <a
+                              href={evt.mapsUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#d4af7a] bg-[#d4af7a]/10 hover:bg-[#d4af7a] hover:text-[#1f0d10] text-[#f0e6dd] font-sans text-xs font-semibold tracking-wide transition-all duration-300 group/btn cursor-pointer shadow-sm"
+                            >
+                              <span>Google Map Location</span>
+                              <ExternalLink className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-250" />
+                            </a>
+                          </motion.div>
+                        )}
                       </motion.div>
                     </motion.div>
                   </motion.div>
