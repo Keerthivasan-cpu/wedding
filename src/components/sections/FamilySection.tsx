@@ -128,7 +128,7 @@ export default function FamilySection() {
             <div className="mt-6 pt-4 border-t border-[#D4AF37]/20 w-full text-center">
               <span className="font-serif text-xs text-amber-300/80 tracking-wider">
                 Groom:{" "}
-                <span className="text-[15px] sm:text-base text-amber-100 font-bold">Ranjith Raj</span>{" "}
+                <span className="text-base sm:text-lg text-amber-100 font-bold">Ranjith Raj</span>{" "}
                 <strong className="text-amber-100 font-semibold">B., B.E.</strong> (UX Designer II)
               </span>
             </div>
@@ -200,7 +200,7 @@ export default function FamilySection() {
             <div className="mt-6 pt-4 border-t border-[#D4AF37]/20 w-full text-center">
               <span className="font-serif text-xs text-amber-300/80 tracking-wider">
                 Bride:{" "}
-                <span className="text-[15px] sm:text-base text-amber-100 font-bold">Vijayalakshmi</span>{" "}
+                <span className="text-base sm:text-lg text-amber-100 font-bold">Vijayalakshmi</span>{" "}
                 <strong className="text-amber-100 font-semibold">E., B.Com., MBA.</strong> (Business Analyst)
               </span>
             </div>
